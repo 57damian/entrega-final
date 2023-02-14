@@ -1,9 +1,20 @@
 const {Router} = require('express')
+const fs = require('fs');
 
 const router = Router()
+const carts = []
+
+createId = () => {
+    const countCarts = this.carts.length;
+    if (countCarts === 0){
+        return 1;
+    }else{
+        return (this.carts[countProducts - 1].id) + 1;
+    }
+}
 
 router.get('/', (req, res) =>{
-    res.send('get')
+    res.send('./src/carts.json')
 })
 router.get('/:id', (req, res) =>{
    res.send('get by id')
